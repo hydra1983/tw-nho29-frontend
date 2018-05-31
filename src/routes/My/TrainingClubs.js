@@ -37,7 +37,12 @@ export default class TrainingClubs extends PureComponent {
           renderItem={item => (
             <List.Item>
               <div>
-                <Card hoverable title={item.name} onClick={() => this.viewTrainingClub(item.id)}>
+                <Card
+                  hoverable
+                  title={item.name}
+                  onClick={() => this.viewTrainingClub(item.id)}
+                  cover={<img alt={item.name} src={item.thumbnailUrl} />}
+                >
                   <div>{item.description}</div>
                 </Card>
               </div>
