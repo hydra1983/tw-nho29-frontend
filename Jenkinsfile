@@ -1,7 +1,6 @@
 pipeline {
     agent any
     options {
-        skipDefaultCheckout()
         disableConcurrentBuilds()
     }
     environment {
@@ -9,20 +8,10 @@ pipeline {
         TARGET_GIT_BRANCH = "master"
     }
     stages {
-        stage('checkout') {
-            steps {
-                checkout([
-                    $class: 'GitSCM',
-                    branches: [[name: "${params.TARGET_GIT_BRANCH}" ? "${params.TARGET_GIT_BRANCH}" : "master"]],
-                    doGenerateSubmoduleConfigurations: false,
-                    extensions: [],
-                    submoduleCfg: [],
-                    userRemoteConfigs: [[url: "${params.TARGET_GIT_URL}"]]])
-            }
-        }
         stage('prepare') {
             steps {
                 sh '''#!/usr/local/bin/bash -l
+                ls -l
                 echo "prepare"
                 '''
             }
