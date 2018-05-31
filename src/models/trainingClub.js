@@ -1,4 +1,4 @@
-import { queryMyTrainingClubs } from '../services/training-club';
+import { queryMyTrainingClubs } from '../services/trainingClub';
 
 export default {
   namespace: 'trainingClub',
