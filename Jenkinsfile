@@ -3,10 +3,6 @@ pipeline {
     options {
         disableConcurrentBuilds()
     }
-    environment {
-        TARGET_GIT_URL = "https://github.com/hydra1983/tw-nho29-frontend.git"
-        TARGET_GIT_BRANCH = "master"
-    }
     stages {
         stage('prepare') {
             steps {
