@@ -60,6 +60,7 @@ pipeline {
                 sh '''#!/usr/local/bin/bash -l
                 yarn stop:docker
                 EXPOSE=80 yarn start:docker
+                docker ps -a
                 '''
             }
         }
