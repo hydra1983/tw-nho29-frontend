@@ -8,7 +8,7 @@ export default {
   },
 
   effects: {
-    *fetch({ payload }, { call, put }) {
+    *fetchList({ payload }, { call, put }) {
       const response = yield call(queryMyTrainingClubs, payload);
       yield put({
         type: 'queryList',

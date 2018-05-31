@@ -73,25 +73,22 @@ export const getRouterData = app => {
       component: dynamicWrapper(app, ['user', 'login'], () => import('../layouts/BasicLayout')),
     },
     '/my/training-clubs': {
-      component: dynamicWrapper(app, ['trainingClub'], () => import('../routes/User/MyTrainingClubCardList')),
+      component: dynamicWrapper(app, ['trainingClub'], () => import('../routes/My/TrainingClubs')),
     },
-    '/apply': {
-      component: dynamicWrapper(app, [], () => import('../routes/User/Apply')),
+    '/my/training-club': {
+      component: dynamicWrapper(app, [], () => import('../routes/My/TrainingClub')),
     },
-    '/training-club': {
-      component: dynamicWrapper(app, [], () => import('../routes/TrainingClub/TrainingClub')),
+    '/my/task-card': {
+      component: dynamicWrapper(app, [], () => import('../routes/My/TaskCard')),
     },
-    '/task-card/task-card': {
-      component: dynamicWrapper(app, [], () => import('../routes/TaskCard/TaskCard')),
+    '/my/task-card/test': {
+      component: dynamicWrapper(app, [], () => import('../routes/My/Test')),
     },
-    '/task-card/test': {
-      component: dynamicWrapper(app, [], () => import('../routes/TaskCard/Test')),
+    '/my/task-card/test-result': {
+      component: dynamicWrapper(app, [], () => import('../routes/My/TestResult')),
     },
-    '/task-card/test-result': {
-      component: dynamicWrapper(app, [], () => import('../routes/TaskCard/TestResult')),
-    },
-    '/task-card/score': {
-      component: dynamicWrapper(app, [], () => import('../routes/TaskCard/Score')),
+    '/my/task-card/score': {
+      component: dynamicWrapper(app, [], () => import('../routes/My/Score')),
     },
     '/exception/403': {
       component: dynamicWrapper(app, [], () => import('../routes/Exception/403')),

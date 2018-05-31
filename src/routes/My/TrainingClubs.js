@@ -7,16 +7,18 @@ import { List, Card } from 'antd';
   list: trainingClub,
   loading: loading.models.training_club,
 }))
-export default class MyTrainingClubCardList extends PureComponent {
+export default class TrainingClubs extends PureComponent {
   componentDidMount() {
     this.props.dispatch({
-      type: 'trainingClub/fetch',
+      type: 'trainingClub/fetchList',
     });
   }
 
-  viewTrainingClub = () => {
-    console.log('viewTrainingClub');
-    this.props.dispatch(routerRedux.push('/apply'));
+  viewTrainingClub = (id) => {
+    this.props.dispatch(routerRedux.push({
+      pathname:`/my/training-club`,
+      search: `?clubId=${id}`,
+    }));
   };
 
   render() {
@@ -31,7 +33,7 @@ export default class MyTrainingClubCardList extends PureComponent {
         renderItem={item => (
           <List.Item>
             <div>
-              <Card hoverable title={item.name} onClick={this.viewTrainingClub}>
+              <Card hoverable title={item.name} onClick={() => this.viewTrainingClub(item.id)}>
                 <div>{item.description}</div>
               </Card>
             </div>
