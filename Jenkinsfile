@@ -58,7 +58,7 @@ pipeline {
         stage('publish') {
             steps {
                 sh '''#!/usr/local/bin/bash -l
-                yarn start:docker
+                EXPOSE=80 yarn start:docker
                 '''
             }
         }

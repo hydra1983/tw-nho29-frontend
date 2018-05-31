@@ -20,7 +20,7 @@
     "test:all": "node ./tests/run-tests.js",
     "prettier": "prettier --write ./src/**/**/**/*",
     "build:docker": "cp -r ./dist ./docker/; docker build -t tw-nho29-frontend ./docker",
-    "start:docker": "docker run --detach --name tw-nho29-frontend --publish 8001:80 tw-nho29-frontend",
+    "start:docker": "docker run --detach --name tw-nho29-frontend --publish ${EXPOSE:-8001}:80 tw-nho29-frontend",
     "stop:docker": "docker stop tw-nho29-frontend && docker rm tw-nho29-frontend"
   },
   "dependencies": {
