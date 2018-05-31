@@ -12,7 +12,7 @@ export default {
       const response = yield call(queryMyTrainingClubs, payload);
       yield put({
         type: 'queryList',
-        payload: Array.isArray(response.data) ? response.data : [],
+        payload: Array.isArray(response) ? response : [],
       });
     },
   },
