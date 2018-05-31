@@ -87,11 +87,6 @@ class BasicLayout extends React.PureComponent {
       breadcrumbNameMap: getBreadcrumbNameMap(getMenuData(), routerData),
     };
   }
-  componentDidMount() {
-    this.props.dispatch({
-      type: 'user/fetchCurrent',
-    });
-  }
   componentWillUnmount() {
     unenquireScreen(this.enquireHandler);
   }
@@ -132,10 +127,7 @@ class BasicLayout extends React.PureComponent {
     return redirect;
   };
   render() {
-    const {
-      routerData,
-      match,
-    } = this.props;
+    const { routerData, match } = this.props;
     const bashRedirect = this.getBashRedirect();
     const layout = (
       <Layout>
