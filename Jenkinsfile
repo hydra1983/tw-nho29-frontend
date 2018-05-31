@@ -18,7 +18,7 @@ pipeline {
         stage('validate') {
             steps {
                 sh '''#!/usr/local/bin/bash -l
-                node --verison
+                node --version
                 npm --version
                 yarn --version
                 '''
@@ -34,28 +34,28 @@ pipeline {
         stage('analyze') {
             steps {
                 sh '''#!/usr/local/bin/bash -l
-                echo "do nothing"
+                yarn lint
                 '''
             }
         }
         stage('test') {
             steps {
                 sh '''#!/usr/local/bin/bash -l
-                echo "do nothing"
+                yarn test
                 '''
             }
         }
         stage('package') {
             steps {
                 sh '''#!/usr/local/bin/bash -l
-                echo "package"
+                yarn build
                 '''
             }
         }
         stage('dockerize') {
             steps {
                 sh '''#!/usr/local/bin/bash -l
-                echo "dockerize"
+                yarn build:docker
                 '''
             }
         }
