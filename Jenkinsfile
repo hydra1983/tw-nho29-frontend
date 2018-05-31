@@ -11,37 +11,37 @@ pipeline {
         stage('prepare') {
             steps {
                 sh '''#!/usr/local/bin/bash -l
-                pwd
-                ls -l
-                echo "prepare"
+                echo "do nothing"
                 '''
             }
         }
         stage('validate') {
             steps {
                 sh '''#!/usr/local/bin/bash -l
-                echo "validate"
+                node --verison
+                npm --version
+                yarn --version
                 '''
             }
         }
         stage('init') {
             steps {
                 sh '''#!/usr/local/bin/bash -l
-                echo "init"
+                echo "do nothing"
                 '''
             }
         }
         stage('analyze') {
             steps {
                 sh '''#!/usr/local/bin/bash -l
-                echo "analyze"
+                echo "do nothing"
                 '''
             }
         }
         stage('test') {
             steps {
                 sh '''#!/usr/local/bin/bash -l
-                echo "test"
+                echo "do nothing"
                 '''
             }
         }
