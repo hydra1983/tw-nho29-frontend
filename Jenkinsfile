@@ -62,7 +62,7 @@ pipeline {
         stage('publish') {
             steps {
                 sh '''#!/usr/local/bin/bash -l
-                echo "publish"
+                yarn start:docker
                 '''
             }
         }
