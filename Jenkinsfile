@@ -27,7 +27,7 @@ pipeline {
         stage('init') {
             steps {
                 sh '''#!/usr/local/bin/bash -l
-                echo "do nothing"
+                yarn install
                 '''
             }
         }
