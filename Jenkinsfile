@@ -11,6 +11,7 @@ pipeline {
         stage('prepare') {
             steps {
                 sh '''#!/usr/local/bin/bash -l
+                pwd
                 ls -l
                 echo "prepare"
                 '''
